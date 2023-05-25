@@ -9,13 +9,13 @@
                     <h2 class="h4 mb-2 mb-md-5 font-weight-bold">Bize Ulaşın</h2>
                     <form method="post" asp-controller="Main" asp-action="SendMessage" asp-area="">
                         <div class="form-group">
-                            <input type="text" class="form-control" name="Name" placeholder="Kişi Bilgisi" />
+                            <input type="text" class="form-control" name="Name" placeholder="Kişi Bilgisi" required />
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" name="Email" placeholder="Email Bilgisi" />
+                            <input type="email" class="form-control" name="Email" placeholder="Email Bilgisi" required />
                         </div>
                         <div class="form-group">
-                            <textarea cols="12" rows="12" class="form-control" name="Message" placeholder="Mesaj İçeriği"></textarea>
+                            <textarea cols="12" rows="12" class="form-control" name="Content" placeholder="Mesaj İçeriği" required></textarea>
                         </div>
                         <div class="form-group">
                             <input type="submit" class="btn btn-primary" value="Mesaj Gönder" />
