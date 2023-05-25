@@ -1,9 +1,11 @@
 ﻿using Institutional.Core.Core.Models;
 using Institutional.Core.Service.Abstract;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace InstitutionalUI.Core.Controllers
 {
+	[AllowAnonymous]
 	public class MainController : Controller
 	{
 		private readonly IMessageService _messageService;

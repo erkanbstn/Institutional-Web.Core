@@ -21,4 +21,9 @@
     <ProjectReference Include="..\Institutional.Core.Service\Institutional.Core.Service.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Models\" />
+  </ItemGroup>
+
 </Project>

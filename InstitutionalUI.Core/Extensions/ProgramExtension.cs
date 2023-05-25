@@ -35,6 +35,9 @@ namespace InstitutionalUI.Core.Extensions
 
             services.AddScoped<IMessageService, MessageManager>();
             services.AddScoped<IMessageRepository, EFMessageRepository>();
+
+            services.AddScoped<IManagerService, ManagerManager>();
+            services.AddScoped<IManagerRepository, EFManagerRepository>();
         }
     }
 }

@@ -22,5 +22,6 @@ namespace Institutional.Core.Repository.Concrete
         public DbSet<Product> Products { get; set; }
         public DbSet<Testimonial> Testimonials { get; set; }
         public DbSet<Message> Messages { get; set; }
+        public DbSet<Manager> Managers{ get; set; }
     }
 }
