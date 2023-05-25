@@ -1,4 +1,5 @@
 ﻿using Institutional.Core.Repository.Abstract;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,29 +10,40 @@ namespace Institutional.Core.Repository.Concrete
 {
     public class EFRepository<T> : IGenericRepository<T> where T : class
     {
-        public Task DeleteAsync(T t)
+        private readonly AppDbContext _appDbContext;
+        DbSet<T> _object;
+        public EFRepository(AppDbContext appDbContext)
         {
-            throw new NotImplementedException();
+            _appDbContext = appDbContext;
+            _object = _appDbContext.Set<T>();
         }
 
-        public Task<T> GetByIdAsync(T t)
+        public async Task DeleteAsync(T t)
         {
-            throw new NotImplementedException();
+            _object.Remove(t);
+            await _appDbContext.SaveChangesAsync();
         }
 
-        public Task InsertAsync(T t)
+        public async Task<T> GetByIdAsync(T t)
         {
-            throw new NotImplementedException();
+            return await _object.FindAsync(t);
         }
 
-        public Task<List<T>> ToListAsync()
+        public async Task InsertAsync(T t)
         {
-            throw new NotImplementedException();
+            await _object.AddAsync(t);
+            await _appDbContext.SaveChangesAsync();
         }
 
-        public Task UpdateAsync(T t)
+        public async Task<List<T>> ToListAsync()
         {
-            throw new NotImplementedException();
+            return await _object.ToListAsync();
+        }
+
+        public async Task UpdateAsync(T t)
+        {
+            _object.Update(t);
+            await _appDbContext.SaveChangesAsync();
         }
     }
 }
