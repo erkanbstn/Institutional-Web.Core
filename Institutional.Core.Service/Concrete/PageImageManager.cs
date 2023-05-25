@@ -28,6 +28,11 @@ namespace Institutional.Core.Service.Concrete
             return await _PageImageRepository.GetByIdAsync(t);
         }
 
+        public async Task<List<PageImage>> GetPageImageListWithType(string Type)
+        {
+            return await _PageImageRepository.GetPageImageListWithType(Type);
+        }
+
         public async Task InsertAsync(PageImage t)
         {
             await _PageImageRepository.InsertAsync(t);

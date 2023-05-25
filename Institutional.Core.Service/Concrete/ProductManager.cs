@@ -28,6 +28,11 @@ namespace Institutional.Core.Service.Concrete
             return await _ProductRepository.GetByIdAsync(t);
         }
 
+        public async Task<List<Product>> GetProductListWithType(string Type)
+        {
+            return await _ProductRepository.GetProductListWithType(Type);
+        }
+
         public async Task InsertAsync(Product t)
         {
             await _ProductRepository.InsertAsync(t);

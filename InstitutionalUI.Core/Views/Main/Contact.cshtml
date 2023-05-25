@@ -1,0 +1,8 @@
+﻿
+@{
+    ViewData["Title"] = "Contact";
+    Layout = "~/Views/Shared/_UILayout.cshtml";
+}
+@await Component.InvokeAsync("_PageImageListPartial",new{Type="İletişim"})
+@await Component.InvokeAsync("_ContactListPartial")
+

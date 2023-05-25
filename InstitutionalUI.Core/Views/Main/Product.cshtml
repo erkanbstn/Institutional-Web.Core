@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Product";
+    Layout = "~/Views/Shared/_UILayout.cshtml";
+}
+
+
+@await Component.InvokeAsync("_PageImageListPartial",new{Type="Ürünler"})
+
+<section class="ftco-section">
+    <div class="container">
+        <div class="ftco-search">
+            <div class="row">
+                <div class="col-md-12 nav-link-wrap">
+                    <div class="nav nav-pills d-flex text-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <a class="nav-link ftco-animate" id="v-pills-2-tab" data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-2" aria-selected="false">Bayan</a>
+                        <a class="nav-link ftco-animate" id="v-pills-3-tab" data-toggle="pill" href="#v-pills-2" role="tab" aria-controls="v-pills-3" aria-selected="false">Erkek</a>
+                        <a class="nav-link ftco-animate" id="v-pills-4-tab" data-toggle="pill" href="#v-pills-3" role="tab" aria-controls="v-pills-4" aria-selected="false">Çocuk</a>
+                        <a class="nav-link ftco-animate" id="v-pills-5-tab" data-toggle="pill" href="#v-pills-4" role="tab" aria-controls="v-pills-5" aria-selected="false">Bambu</a>
+                        <a class="nav-link ftco-animate" id="v-pills-6-tab" data-toggle="pill" href="#v-pills-5" role="tab" aria-controls="v-pills-6" aria-selected="false">Sporcu</a>
+                    </div>
+                </div>
+
+
+                <div class="col-md-12 tab-wrap">
+                    <div class="tab-content" id="v-pills-tabContent">
+
+
+                        @await Component.InvokeAsync("_ProductListPartial",new{Type="Ürünler"})
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

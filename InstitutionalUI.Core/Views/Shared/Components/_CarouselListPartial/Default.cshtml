@@ -1,0 +1,16 @@
+﻿@model List<Carousel>
+
+@foreach (var Carousel in Model)
+{
+    <div class="slider-item js-fullheight" style="background-image: url(/Images/@Carousel.Image);">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row slider-text js-fullheight justify-content-center align-items-center" data-scrollax-parent="true">
+                <div class="col-md-12 col-sm-12 text-center ftco-animate">
+                    <span class="subheading">@Carousel.Title</span>
+                    <h1 class="mb-4">@Carousel.Content</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+}        

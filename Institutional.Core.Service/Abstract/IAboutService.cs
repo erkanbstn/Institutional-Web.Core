@@ -1,4 +1,5 @@
 ﻿using Institutional.Core.Core.Models;
+using Institutional.Core.Repository.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +10,6 @@ namespace Institutional.Core.Service.Abstract
 {
     public interface IAboutService : IGenericService<About>
     {
+        Task<List<About>> GetAboutListWithType(string Type);
     }
 }

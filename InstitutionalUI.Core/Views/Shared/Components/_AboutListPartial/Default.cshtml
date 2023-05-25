@@ -1,0 +1,63 @@
+﻿@model List<About>
+@foreach (var About in Model)
+{
+    <section class="ftco-section ftco-wrap-about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 d-flex">
+                    <div class="img img-1 mr-md-2" style="background-image: url(/Images/@About.BigImage);"></div>
+                    <div class="img img-2 ml-md-2" style="background-image: url(/Images/@About.SmallImage);"></div>
+                </div>
+                <div class="col-md-5 wrap-about pt-5 pt-md-5 pb-md-3 ftco-animate">
+                    <div class="heading-section mb-4 my-5 my-md-0">
+                        <span class="subheading">Hakkımızda</span>
+                        <h2 class="mb-4">@About.Title</h2>
+                    </div>
+                    <p>@About.Content</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="ftco-section ftco-counter img ftco-no-pt" id="section-counter">
+        <div class="container">
+            <div class="row d-md-flex">
+                <div class="col-md-9">
+                    <div class="row d-md-flex align-items-center">
+                        <div class="col-md-6 col-lg-3 mb-4 mb-lg-0 d-flex justify-content-center counter-wrap ftco-animate">
+                            <div class="block-18">
+                                <div class="text">
+                                    <strong class="number" data-number="@About.ExperienceYear">0</strong>
+                                    <span>Yıllık Deneyim</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3 mb-4 mb-lg-0 d-flex justify-content-center counter-wrap ftco-animate">
+                            <div class="block-18">
+                                <div class="text">
+                                    <strong class="number" data-number="@About.SockVariety">0</strong>
+                                    <span>Çeşit Çorap</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3 mb-4 mb-lg-0 d-flex justify-content-center counter-wrap ftco-animate">
+                            <div class="block-18">
+                                <div class="text">
+                                    <strong class="number" data-number="@About.Employee">0</strong>
+                                    <span>Çalışan</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3 mb-4 mb-lg-0 d-flex justify-content-center counter-wrap ftco-animate">
+                            <div class="block-18">
+                                <div class="text">
+                                    <strong class="number" data-number="@About.HappyCustomer">0</strong>
+                                    <span>Memnun Müşteri</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+} 

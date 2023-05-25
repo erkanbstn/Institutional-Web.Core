@@ -23,6 +23,11 @@ namespace Institutional.Core.Service.Concrete
             await _aboutRepository.DeleteAsync(t);
         }
 
+        public async Task<List<About>> GetAboutListWithType(string Type)
+        {
+            return await _aboutRepository.GetAboutListWithType(Type);
+        }
+
         public async Task<About> GetByIdAsync(About t)
         {
             return await _aboutRepository.GetByIdAsync(t);

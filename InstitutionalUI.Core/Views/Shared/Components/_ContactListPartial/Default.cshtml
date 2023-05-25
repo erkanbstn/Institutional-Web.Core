@@ -1,0 +1,82 @@
+﻿@model List<Contact>
+
+@foreach (var Contact in Model)
+{
+    <section class="ftco-section ftco-no-pt ftco-no-pb contact-section">
+        <div class="container">
+            <div class="row d-flex align-items-stretch no-gutters">
+                <div class="col-md-6 pt-5 px-2 pb-2 p-md-5 order-md-last">
+                    <h2 class="h4 mb-2 mb-md-5 font-weight-bold">Bize Ulaşın</h2>
+                    <form method="post" asp-controller="Main" asp-action="SendMessage" asp-area="">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="Name" placeholder="Kişi Bilgisi" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="Email" placeholder="Email Bilgisi" />
+                        </div>
+                        <div class="form-group">
+                            <textarea cols="12" rows="12" class="form-control" name="Message" placeholder="Mesaj İçeriği"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary" value="Mesaj Gönder" />
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-6 d-flex align-items-stretch">
+                    <div class="gmap_canvas">
+                        <br>
+                        <br>
+                        <br>
+                        @Html.Raw(Contact.MapLocation)
+                    </div>
+                    <style>
+                        .mapouter {
+                            position: relative;
+                            text-align: right;
+                            width: 600px;
+                            height: 600px;
+                        }
+
+                        .gmap_canvas {
+                            overflow: hidden;
+                            background: none !important;
+                            width: 600px;
+                            height: 600px;
+                        }
+
+                        .gmap_iframe {
+                            width: 600px !important;
+                            height: 600px !important;
+                        }
+                    </style>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ftco-section contact-section">
+        <div class="container">
+            <div class="row d-flex contact-info">
+                <div class="col-md-12 mb-4">
+                    <h2 class="h4 font-weight-bold">İletişim Bilgileri</h2>
+                </div>
+                <div class="w-100"></div>
+                <div class="col-md-3 d-flex">
+                    <div class="dbox">
+                        <p>Adres : <span>@Contact.Address</span></p>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex">
+                    <div class="dbox">
+                        <p>Telefon : <span>@Contact.Phone</span></p>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex">
+                    <div class="dbox">
+                        <p><span>Email :</span> <a href="mailto:info@yoursite.com">@Contact.Email</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+}

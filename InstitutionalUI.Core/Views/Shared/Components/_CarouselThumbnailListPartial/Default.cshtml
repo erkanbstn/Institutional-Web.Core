@@ -1,0 +1,14 @@
+﻿@model List<CarouselThumbnail>
+
+@foreach (var CarouselThumbnail in Model)
+{
+    <div class="col-md-3">
+        <div class="featured-menus ftco-animate">
+            <div class="menu-img img" style="background-image: url(/Images/@CarouselThumbnail.Image);"></div>
+            <div class="text text-center">
+                <h3>@CarouselThumbnail.Content</h3>
+                <p><span>@CarouselThumbnail.Title</span></p>
+            </div>
+        </div>
+    </div>
+}        
