@@ -21,5 +21,6 @@ namespace Institutional.Core.Repository.Concrete
         public DbSet<PageImage> PageImages { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Testimonial> Testimonials { get; set; }
+        public DbSet<Message> Messages { get; set; }
     }
 }
