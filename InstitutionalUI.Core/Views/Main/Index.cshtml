@@ -1,0 +1,238 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_UILayout.cshtml";
+}
+
+<section class="home-slider owl-carousel js-fullheight">
+
+    <div class="slider-item js-fullheight" style="background-image: url(<%#Eval(" Resim")%>
+        );">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row slider-text js-fullheight justify-content-center align-items-center" data-scrollax-parent="true">
+
+                <div class="col-md-12 col-sm-12 text-center ftco-animate">
+                    <span class="subheading"><%# Eval("Baslik") %></span>
+                    <h1 class="mb-4"><%# Eval("Aciklama") %></h1>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ftco-section ftco-no-pt ftco-no-pb">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="featured">
+                    <div class="row">
+
+                        <div class="col-md-3">
+                            <div class="featured-menus ftco-animate">
+                                <div class="menu-img img" style="background-image: url(<%# Eval(" Resim") %>);"></div>
+                                <div class="text text-center">
+                                    <h3><%# Eval("Aciklama") %></h3>
+                                    <p><span><%# Eval("Tanim") %></span></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="featured-menus ftco-animate">
+                                <div class="menu-img img" style="background-image: url(<%# Eval(" Resim") %>);"></div>
+                                <div class="text text-center">
+                                    <h3><%# Eval("Aciklama") %></h3>
+                                    <p><span><%# Eval("Tanim") %></span></p>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="col-md-3">
+                            <div class="featured-menus ftco-animate">
+                                <div class="menu-img img" style="background-image: url(<%# Eval(" Resim") %>);"></div>
+                                <div class="text text-center">
+                                    <h3><%# Eval("Aciklama") %></h3>
+                                    <p><span><%# Eval("Tanim") %></span></p>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+                        <div class="col-md-3">
+                            <div class="featured-menus ftco-animate">
+                                <div class="menu-img img" style="background-image: url(<%# Eval(" Resim") %>);"></div>
+                                <div class="text text-center">
+                                    <h3><%# Eval("Aciklama") %></h3>
+                                    <p><span><%# Eval("Tanim") %></span></p>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="ftco-section ftco-wrap-about">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7 d-flex">
+
+                <div class="img img-1 mr-md-2" style="background-image: url(<%# Eval(" Resim") %>);"></div>
+
+                <div class="img img-2 ml-md-2" style="background-image: url(<%# Eval(" Resim") %>);"></div>
+
+
+            </div>
+            <div class="col-md-5 wrap-about pt-5 pt-md-5 pb-md-3 ftco-animate">
+                <div class="heading-section mb-4 my-5 my-md-0">
+                    <span class="subheading">Hakkımızda</span>
+
+
+                    <h2 class="mb-4"><%# Eval("Baslik") %></h2>
+                </div>
+                <p><%# Eval("Aciklama") %> </p>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="ftco-section ftco-counter img ftco-no-pt" id="section-counter">
+    <div class="container">
+        <div class="row d-md-flex">
+            <div class="col-md-9">
+                <div class="row d-md-flex align-items-center">
+
+
+                    <div class="col-md-6 col-lg-3 mb-4 mb-lg-0 d-flex justify-content-center counter-wrap ftco-animate">
+                        <div class="block-18">
+                            <div class="text">
+                                <strong class="number" data-number="<%# Eval(" Sayi") %>">0</strong>
+                                <span><%# Eval("Aciklama") %></span>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<section class="ftco-section bg-light">
+    <div class="container">
+        <div class="row justify-content-center mb-5 pb-2">
+            <div class="col-md-12 text-center heading-section ftco-animate">
+                <span class="subheading">Hizmetlerimiz</span>
+                <h2 class="mb-4">İş Yeri Durumumuz</h2>
+            </div>
+        </div>
+        <div class="row">
+
+
+            <div class="col-md-4 d-flex align-self-stretch ftco-animate text-center">
+                <div class="media block-6 services d-block">
+                    <div class="icon d-flex justify-content-center align-items-center">
+                        <span class="flaticon-cake"></span>
+                    </div>
+                    <div class="media-body p-2 mt-3">
+                        <h3 class="heading"><%# Eval("Baslik") %></h3>
+                        <p><%# Eval("Aciklama") %></p>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-md-4 d-flex align-self-stretch ftco-animate text-center">
+                <div class="media block-6 services d-block">
+                    <div class="icon d-flex justify-content-center align-items-center">
+                        <span class="flaticon-meeting"></span>
+                    </div>
+                    <div class="media-body p-2 mt-3">
+                        <h3 class="heading"><%# Eval("Baslik") %></h3>
+                        <p><%# Eval("Aciklama") %></p>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-md-4 d-flex align-self-stretch ftco-animate text-center">
+                <div class="media block-6 services d-block">
+                    <div class="icon d-flex justify-content-center align-items-center">
+                        <span class="flaticon-tray"></span>
+                    </div>
+                    <div class="media-body p-2 mt-3">
+                        <h3 class="heading"><%# Eval("Baslik") %></h3>
+                        <p><%# Eval("Aciklama") %></p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+<section class="ftco-section">
+    <div class="container">
+        <div class="row no-gutters justify-content-center mb-5 pb-2">
+            <div class="col-md-12 text-center heading-section ftco-animate">
+                <span class="subheading">Ozel Yapım</span>
+                <h2 class="mb-4">Ürünlerimiz</h2>
+            </div>
+        </div>
+        <div class="row no-gutters d-flex align-items-stretch">
+
+
+
+            <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
+                <div class="menus d-sm-flex ftco-animate align-items-stretch">
+                    <div class="menu-img img" style="background-image: url(<%# Eval(" Resim") %>);"></div>
+                    <div class="text d-flex align-items-center">
+                        <div>
+                            <div class="d-flex">
+                                <div class="one-half">
+                                    <h3><%# Eval("Baslik") %></h3>
+                                </div>
+                            </div>
+                            <p><span><%# Eval("Tanim") %></span> </p>
+                            <span style="color: orangered"><%# Eval("Aciklama") %></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+</section>
