@@ -11,6 +11,11 @@ namespace Institutional.Core.Repository.Concrete
             _appDbContext = appDbContext;
         }
 
+        public async Task<Manager> GetByNameAsync(string userName)
+        {
+            return await _appDbContext.Managers.FirstOrDefaultAsync(b => b.UserName == userName);
+        }
+
         public async Task<Manager> SignInAsync(Manager manager)
         {
             return await _appDbContext.Managers.FirstOrDefaultAsync(x => x.UserName == manager.UserName && x.Password == manager.Password);

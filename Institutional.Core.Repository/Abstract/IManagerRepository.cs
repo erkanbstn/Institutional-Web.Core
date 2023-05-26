@@ -4,5 +4,6 @@ namespace Institutional.Core.Repository.Abstract
     public interface IManagerRepository : IGenericRepository<Manager>
     {
         Task<Manager> SignInAsync(Manager manager);
+        Task<Manager> GetByNameAsync(string userName);
     }
 }

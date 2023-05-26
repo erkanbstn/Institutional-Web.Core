@@ -7,5 +7,6 @@ namespace Institutional.Core.Service.Abstract
     {
         Task<Manager> SignInAsync(Manager manager);
         Task<ClaimsPrincipal> SignInWithClaimAsync(Manager manager);
+        Task<Manager> GetByNameAsync(string userName);
     }
 }

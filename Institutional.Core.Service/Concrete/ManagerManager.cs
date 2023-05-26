@@ -23,6 +23,11 @@ namespace Institutional.Core.Service.Concrete
             return await _ManagerRepository.GetByIdAsync(id);
         }
 
+        public async Task<Manager> GetByNameAsync(string userName)
+        {
+            return await _ManagerRepository.GetByNameAsync(userName);
+        }
+
         public async Task InsertAsync(Manager t)
         {
             await _ManagerRepository.InsertAsync(t);
@@ -40,8 +45,8 @@ namespace Institutional.Core.Service.Concrete
         public async Task<ClaimsPrincipal> SignInWithClaimAsync(Manager manager)
         {
             var user = await SignInAsync(manager);
-            var claims = new List<Claim> { new Claim(ClaimTypes.Name, user.UserName) };
-            var userIdentity = new ClaimsIdentity(claims, "SignIn");
+            var claims = new List<Claim> { new Claim(ClaimTypes.Name, "Login") };
+            var userIdentity = new ClaimsIdentity(claims, user.Id.ToString());
             ClaimsPrincipal claimsPrincipal = new ClaimsPrincipal(userIdentity);
             return claimsPrincipal;
         }
