@@ -1,7 +1,5 @@
 ﻿using AutoMapper;
-using Institutional.Core.Core.Models;
 using Institutional.Core.Dto.Dtos.Event;
-using Institutional.Core.Dto.Dtos.PageImage;
 using Institutional.Core.Service.Abstract;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

@@ -1,6 +1,4 @@
 ﻿using AutoMapper;
-using Institutional.Core.Core.Models;
-using Institutional.Core.Dto.Dtos.Carousel;
 using Institutional.Core.Dto.Dtos.CarouselThumbnail;
 using Institutional.Core.Service.Abstract;
 using Microsoft.AspNetCore.Authorization;

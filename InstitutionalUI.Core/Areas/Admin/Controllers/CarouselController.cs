@@ -3,11 +3,8 @@ using Institutional.Core.Core.Models;
 using Institutional.Core.Dto.Dtos.Carousel;
 using Institutional.Core.Service.Abstract;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.FileProviders;
-using System.Security.Claims;
-
 namespace InstitutionalUI.Core.Areas.Admin.Controllers
 {
     [Area("Admin")]

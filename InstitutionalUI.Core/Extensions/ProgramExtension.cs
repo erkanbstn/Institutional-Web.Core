@@ -2,6 +2,10 @@
 using Institutional.Core.Repository.Concrete;
 using Institutional.Core.Service.Abstract;
 using Institutional.Core.Service.Concrete;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Authorization;
+using Microsoft.Extensions.FileProviders;
 
 namespace InstitutionalUI.Core.Extensions
 {
@@ -9,6 +13,10 @@ namespace InstitutionalUI.Core.Extensions
     {
         public static void ContainerDependencies(this IServiceCollection services)
         {
+            services.AddControllersWithViews();
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(x => { x.LoginPath = "/Auth/SignIn"; });
+
             services.AddScoped<ICarouselService, CarouselManager>();
             services.AddScoped<ICarouselRepository, EFCarouselRepository>();
 
@@ -38,6 +46,15 @@ namespace InstitutionalUI.Core.Extensions
 
             services.AddScoped<IManagerService, ManagerManager>();
             services.AddScoped<IManagerRepository, EFManagerRepository>();
+
+            services.AddMvc(config =>
+            {
+                var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
+                config.Filters.Add(new AuthorizeFilter(policy));
+            });
+
+            services.AddSingleton<IFileProvider>(new PhysicalFileProvider(Directory.GetCurrentDirectory()));
+
         }
     }
 }
