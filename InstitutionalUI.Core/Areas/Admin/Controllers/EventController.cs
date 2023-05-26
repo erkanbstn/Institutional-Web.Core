@@ -3,7 +3,6 @@ using Institutional.Core.Dto.Dtos.Event;
 using Institutional.Core.Service.Abstract;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.FileProviders;
 
 namespace InstitutionalUI.Core.Areas.Admin.Controllers
 {
@@ -12,13 +11,11 @@ namespace InstitutionalUI.Core.Areas.Admin.Controllers
     public class EventController : Controller
     {
         private readonly IMapper _mapper;
-        private readonly IFileProvider _fileProvider;
         private readonly IEventService _EventService;
 
-        public EventController(IMapper mapper, IFileProvider fileProvider, IEventService EventService)
+        public EventController(IMapper mapper, IEventService EventService)
         {
             _mapper = mapper;
-            _fileProvider = fileProvider;
             _EventService = EventService;
         }
 

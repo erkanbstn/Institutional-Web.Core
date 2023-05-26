@@ -12,6 +12,11 @@ namespace Institutional.Core.Service.Concrete
             _ContactRepository = ContactRepository;
         }
 
+        public async Task<int> ContactCount()
+        {
+            return await _ContactRepository.ContactCount();
+        }
+
         public async Task DeleteAsync(Contact t)
         {
             await _ContactRepository.DeleteAsync(t);

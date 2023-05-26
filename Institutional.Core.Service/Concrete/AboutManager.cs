@@ -12,6 +12,11 @@ namespace Institutional.Core.Service.Concrete
             _aboutRepository = aboutRepository;
         }
 
+        public async Task<int> AboutCount()
+        {
+            return await _aboutRepository.AboutCount();
+        }
+
         public async Task DeleteAsync(About t)
         {
             await _aboutRepository.DeleteAsync(t);

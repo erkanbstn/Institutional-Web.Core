@@ -3,5 +3,6 @@ namespace Institutional.Core.Repository.Abstract
 {
     public interface IContactRepository : IGenericRepository<Contact>
     {
+        Task<int> ContactCount();
     }
 }

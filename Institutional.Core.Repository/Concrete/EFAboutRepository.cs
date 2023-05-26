@@ -10,6 +10,12 @@ namespace Institutional.Core.Repository.Concrete
         {
             _appDbContext = appDbContext;
         }
+
+        public async Task<int> AboutCount()
+        {
+            return await _appDbContext.Abouts.CountAsync();
+        }
+
         public async Task<List<About>> GetAboutListWithType(string Type)
         {
             return await _appDbContext.Abouts.Where(x => x.ShowType == Type).ToListAsync();

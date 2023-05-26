@@ -1,0 +1,26 @@
+﻿@model ContactEditDto
+@{
+    ViewData["Title"] = "EditContact";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>İletişim Düzenle</h1>
+<br />
+<div class="row">
+    <form method="post" enctype="multipart/form-data">
+        <input type="hidden" class="form-control" asp-for="Id" />
+        <span>Adres</span>
+        <input type="text" class="form-control" asp-for="Address" placeholder="Adres Giriniz" />
+        <br />
+        <span>Email</span>
+        <input type="text" class="form-control" asp-for="Email" placeholder="Email Giriniz" />
+        <br />
+        <span>Telefon</span>
+        <input type="text" class="form-control" asp-for="Phone" placeholder="Telefon Giriniz" />
+        <br />
+        <span>Harita Lokasyonu</span>
+        <textarea rows="3" cols="3" class="form-control" asp-for="MapLocation" placeholder="Harita Lokasyonu Giriniz"></textarea>
+        <br />
+        <input type="submit" class="btn btn-info" value="Değişiklikleri Kaydet" />
+    </form>
+</div>
