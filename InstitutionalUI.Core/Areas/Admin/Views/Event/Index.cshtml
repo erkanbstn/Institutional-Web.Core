@@ -1,0 +1,59 @@
+﻿@model List<EventListDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-lg-12 col-md-8 mb-md-0 mt-6 ">
+        <div class="card">
+            <div class="card-header pb-0">
+                <div class="row">
+                    <div class="col-lg-6 col-7">
+                        <h6>Aktiviteler</h6>
+                        <p class="text-sm mb-0">
+                            <i class="fa fa-check text-info" aria-hidden="true"></i>
+                            <span class="font-weight-bold ms-1">@ViewBag.EventCount</span> Adet Veri Mevcut
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body px-0 pb-2">
+                <div class="table-responsive">
+                    <table class="table align-items-center mb-0">
+                        <thead>
+                            <tr>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Aksiyon</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var Event in Model)
+                            {
+                                <tr>
+                                    <td class="align-middle text-center text-sm">
+                                        <span cla ss="text-xs font-weight-bold">
+                                            <a href="~/Admin/Event/EditEvent/@Event.Id" class="btn btn-outline-info">Düzenle</a>
+                                        </span>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    <br />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" navbar-scroll="true">
+    <div class="container-fluid py-1 px-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
+                <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Sayfalar</a></li>
+                <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Admin</li>
+            </ol>
+            <h6 class="font-weight-bolder mb-0">Aktiviteler</h6>
+        </nav>
+    </div>
+</nav>

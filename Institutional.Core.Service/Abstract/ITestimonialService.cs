@@ -9,5 +9,6 @@ namespace Institutional.Core.Service.Abstract
 {
     public interface ITestimonialService : IGenericService<Testimonial>
     {
+        Task<int> TestimonialCount();
     }
 }

@@ -1,13 +1,14 @@
 ﻿using Microsoft.AspNetCore.Http;
-namespace Institutional.Core.Dto.Dtos.CarouselThumbnail
+
+namespace Institutional.Core.Dto.Dtos.Testimonial
 {
-    public class CarouselThumbnailEditDto
+    public class TestimonialEditDto
     {
         public int Id { get; set; }
-        public string Title { get; set; }
         public string Content { get; set; }
+        public string Company { get; set; }
+        public string Type { get; set; }
         public string ImageUrl { get; set; }
         public IFormFile Picture { get; set; }
-        public bool Status { get; set; }
     }
 }

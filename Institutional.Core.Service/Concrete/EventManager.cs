@@ -23,6 +23,11 @@ namespace Institutional.Core.Service.Concrete
             await _EventRepository.DeleteAsync(t);
         }
 
+        public async Task<int> EventCount()
+        {
+             return await _EventRepository.EventCount();
+        }
+
         public async Task<Event> GetByIdAsync(int id)
         {
             return await _EventRepository.GetByIdAsync(id);

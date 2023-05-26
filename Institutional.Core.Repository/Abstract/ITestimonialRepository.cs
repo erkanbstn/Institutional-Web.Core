@@ -9,5 +9,6 @@ namespace Institutional.Core.Repository.Abstract
 {
     public interface ITestimonialRepository : IGenericRepository<Testimonial>
     {
+        Task<int> TestimonialCount();
     }
 }

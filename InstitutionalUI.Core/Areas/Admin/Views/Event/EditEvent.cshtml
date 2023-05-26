@@ -1,0 +1,24 @@
+﻿@model EventEditDto
+@{
+    ViewData["Title"] = "EditEvent";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Aktivite Düzenle</h1>
+<br />
+<div class="row">
+    <form method="post" enctype="multipart/form-data">
+        <input type="hidden" class="form-control" asp-for="Id" />
+        <span>Doğum Günü Partisi</span>
+        <input type="text" class="form-control" asp-for="BirthDayContent" placeholder="İçerik Giriniz" />
+        <br />
+        <span>İş Görüşmeleri</span>
+        <input type="text" class="form-control" asp-for="ConversationContent" placeholder="İçerik Giriniz" />
+        <br />
+        <span>Yemek Partileri</span>
+        <input type="text" class="form-control" asp-for="DinnerParty" placeholder="İçerik Giriniz" />
+        <br />
+        <input type="submit" class="btn btn-info" value="Değişiklikleri Kaydet" />
+    </form>
+</div>
+

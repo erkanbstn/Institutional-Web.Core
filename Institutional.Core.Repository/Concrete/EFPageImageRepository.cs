@@ -21,5 +21,10 @@ namespace Institutional.Core.Repository.Concrete
         {
             return await _appDbContext.PageImages.Where(x => x.ShowType == Type).ToListAsync();
         }
+
+        public async Task<int> PageImageCount()
+        {
+            return await _appDbContext.PageImages.CountAsync();
+        }
     }
 }

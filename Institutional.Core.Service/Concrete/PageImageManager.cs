@@ -20,6 +20,8 @@ namespace Institutional.Core.Service.Concrete
 
         public async Task DeleteAsync(PageImage t)
         {
+            t.DeletedDate = DateTime.Now;
+            t.Status = false;
             await _PageImageRepository.DeleteAsync(t);
         }
 
@@ -36,6 +38,11 @@ namespace Institutional.Core.Service.Concrete
         public async Task InsertAsync(PageImage t)
         {
             await _PageImageRepository.InsertAsync(t);
+        }
+
+        public async Task<int> PageImageCount()
+        {
+            return await _PageImageRepository.PageImageCount();
         }
 
         public async Task<List<PageImage>> ToListAsync()

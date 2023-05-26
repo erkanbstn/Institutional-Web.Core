@@ -1,4 +1,4 @@
-﻿@model List<CarouselThumbnailListDto>
+﻿@model List<PageImageListDto>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -10,10 +10,10 @@
             <div class="card-header pb-0">
                 <div class="row">
                     <div class="col-lg-6 col-7">
-                        <h6>Carousel</h6>
+                        <h6>Sayfa Arkaplan Resimleri</h6>
                         <p class="text-sm mb-0">
                             <i class="fa fa-check text-info" aria-hidden="true"></i>
-                            <span class="font-weight-bold ms-1">@ViewBag.carouselThumbnailCount</span> Adet Veri Mevcut
+                            <span class="font-weight-bold ms-1">@ViewBag.pageImageCount</span> Adet Veri Mevcut
                         </p>
                     </div>
                 </div>
@@ -23,46 +23,43 @@
                     <table class="table align-items-center mb-0">
                         <thead>
                             <tr>
-                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Görsel-Başlık</th>
-                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">İçerik</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Görsel-GörüntülemeTipi</th>
                                 <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Aksiyon</th>
                                 <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Durum</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach (var Carousel in Model)
+                            @foreach (var PageImage in Model)
                             {
                                 <tr>
                                     <td>
                                         <div class="d-flex px-2 py-1">
                                             <div>
-                                                <img src="~/Images/@Carousel.Image" class="avatar avatar-sm me-3" alt="xd">
+                                                <img src="~/Images/@PageImage.Image" class="avatar avatar-sm me-3" alt="xd">
                                             </div>
                                             <div class="d-flex flex-column justify-content-center">
-                                                <h6 class="mb-0 text-sm">@Carousel.Title</h6>
+                                                <h6 class="mb-0 text-sm">@PageImage.ShowType</h6>
                                             </div>
                                         </div>
                                     </td>
-                                    <td class="align-middle text-center text-sm">
-                                        <span class="text-xs font-weight-bold">@Carousel.Content</span>
-                                    </td>
+                                   
                                     <td class="align-middle text-center text-sm">
                                         <span class="text-xs font-weight-bold">
-                                                <a href="~/Admin/CarouselThumbnail/DeleteCarouselThumbnail/@Carousel.Id" class="btn btn-outline-warning">Sil</a>
+                                            <a href="~/Admin/PageImage/DeletePageImage/@PageImage.Id" class="btn btn-outline-warning">Sil</a>
                                         </span>
                                         <span cla ss="text-xs font-weight-bold">
-                                                <a href="~/Admin/CarouselThumbnail/EditCarouselThumbnail/@Carousel.Id" class="btn btn-outline-info">Düzenle</a>
+                                            <a href="~/Admin/PageImage/EditPageImage/@PageImage.Id" class="btn btn-outline-info">Düzenle</a>
                                         </span>
                                     </td>
                                     <td class="align-middle text-center text-sm">
                                         <span class="text-xs font-weight-bold">
-                                            @if (Carousel.Status)
+                                            @if (PageImage.Status)
                                             {
                                                 <span class="text-success">Aktif</span>
                                             }
                                             else
                                             {
-                                               <span class="text-danger">Pasif</span>
+                                                <span class="text-danger">Pasif</span>
                                             }
                                         </span>
                                     </td>
@@ -83,7 +80,7 @@
                 <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Sayfalar</a></li>
                 <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Admin</li>
             </ol>
-            <h6 class="font-weight-bolder mb-0">Carousel Thumbnail</h6>
+            <h6 class="font-weight-bolder mb-0">Sayfa Arkaplan Resimleri</h6>
         </nav>
     </div>
 </nav>
