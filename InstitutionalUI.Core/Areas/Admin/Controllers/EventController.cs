@@ -22,8 +22,8 @@ namespace InstitutionalUI.Core.Areas.Admin.Controllers
         public async Task<IActionResult> Index()
         {
             ViewBag.EventCount = await _EventService.EventCount();
-            var carouselList = _mapper.Map<List<EventListDto>>(await _EventService.ToListAsync());
-            return View(carouselList);
+            var eventList = _mapper.Map<List<EventListDto>>(await _EventService.ToListAsync());
+            return View(eventList);
         }
         public async Task<IActionResult> EditEvent(int id)
         {

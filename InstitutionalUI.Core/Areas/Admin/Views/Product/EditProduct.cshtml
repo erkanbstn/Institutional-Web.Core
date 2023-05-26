@@ -1,0 +1,36 @@
+﻿@model ProductEditDto
+@{
+    ViewData["Title"] = "EditProduct";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h1>Ürün Düzenle</h1>
+<br />
+<div class="row">
+    <form method="post" enctype="multipart/form-data">
+        <input type="hidden" class="form-control" asp-for="Id"/>
+        <span>Başlık</span>
+        <input type="text" class="form-control" asp-for="Title" placeholder="Başlık Giriniz" />
+        <br />
+        <span>İçerik</span>
+        <input type="text" class="form-control" asp-for="Content" placeholder="İçerik Giriniz" />
+        <br />
+         <span>Detay 1</span>
+        <input type="text" class="form-control" asp-for="Detail" placeholder="Detay Giriniz" />
+        <br />
+         <span>Detay 2</span>
+        <input type="text" class="form-control" asp-for="Detail2" placeholder="Detay Giriniz" />
+        <br />
+         <span>Görüntüleme Tipi <b>(Hangi Sayfada Görüntüleneceğini Seçiniz)</b></span>
+        <select asp-for="ShowType" class="form-control">
+            <option value="">Görüntüleme Tipi Seçiniz</option>
+            <option value="Kurumsal">Kurumsal</option>
+            <option value="Ürünler">Ürünler</option>
+        </select>
+        <br />
+        <span>Görsel</span>
+        <input type="file" class="form-control" asp-for="Picture" placeholder="Dosya Seçiniz" />
+        <br />
+        <input type="submit" class="btn btn-info" value="Değişiklikleri Kaydet" />
+    </form>
+</div>
+

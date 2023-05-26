@@ -1,4 +1,4 @@
-﻿@model List<CarouselThumbnailListDto>
+﻿@model List<MessageListDto>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -10,60 +10,49 @@
             <div class="card-header pb-0">
                 <div class="row">
                     <div class="col-lg-6 col-7">
-                        <h6>Carousel</h6>
+                        <h6>İletişim</h6>
                         <p class="text-sm mb-0">
                             <i class="fa fa-check text-info" aria-hidden="true"></i>
-                            <span class="font-weight-bold ms-1">@ViewBag.carouselThumbnailCount</span> Adet Veri Mevcut
+                            <span class="font-weight-bold ms-1">@ViewBag.MessageCount</span> Adet Veri Mevcut
                         </p>
                     </div>
                 </div>
             </div>
+            <br />
+            <span cla ss="text-xs font-weight-bold">
+                <a href="~/Admin/Message/DeleteAllMessage" class="btn btn-outline-danger mx-3">Tümünü Sil</a>
+            </span>
             <div class="card-body px-0 pb-2">
                 <div class="table-responsive">
                     <table class="table align-items-center mb-0">
                         <thead>
                             <tr>
-                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Görsel-Başlık</th>
-                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">İçerik</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Kişi</th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Email</th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tarih</th>
                                 <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Aksiyon</th>
-                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Durum</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach (var CarouselThumbnail in Model)
+                            @foreach (var Message in Model)
                             {
                                 <tr>
                                     <td>
                                         <div class="d-flex px-2 py-1">
-                                            <div>
-                                                <img src="~/Images/@CarouselThumbnail.Image" class="avatar avatar-sm me-3" alt="xd">
-                                            </div>
                                             <div class="d-flex flex-column justify-content-center">
-                                                <h6 class="mb-0 text-sm">@CarouselThumbnail.Title</h6>
+                                                <h6 class="mb-0 text-sm">@Message.Name</h6>
                                             </div>
                                         </div>
                                     </td>
                                     <td class="align-middle text-center text-sm">
-                                        <span class="text-xs font-weight-bold">@CarouselThumbnail.Content</span>
+                                        <span class="text-xs font-weight-bold">@Message.Email</span>
                                     </td>
                                     <td class="align-middle text-center text-sm">
-                                        <span class="text-xs font-weight-bold">
-                                            <a href="~/Admin/CarouselThumbnail/DeleteCarouselThumbnail/@CarouselThumbnail.Id" class="btn btn-outline-warning">Sil</a>
-                                        </span>
+                                        <span class="text-xs font-weight-bold">@Convert.ToDateTime(Message.Date).ToString("dd/MM/yyyy")</span>
+                                    </td>
+                                    <td class="align-middle text-center text-sm">
                                         <span cla ss="text-xs font-weight-bold">
-                                            <a href="~/Admin/CarouselThumbnail/EditCarouselThumbnail/@CarouselThumbnail.Id" class="btn btn-outline-info">Düzenle</a>
-                                        </span>
-                                    </td>
-                                    <td class="align-middle text-center text-sm">
-                                        <span class="text-xs font-weight-bold">
-                                            @if (CarouselThumbnail.Status)
-                                            {
-                                                <span class="text-success">Aktif</span>
-                                            }
-                                            else
-                                            {
-                                               <span class="text-danger">Pasif</span>
-                                            }
+                                            <a href="~/Admin/Message/DetailMessage/@Message.Id" class="btn btn-outline-info">Detay</a>
                                         </span>
                                     </td>
                                 </tr>
@@ -83,7 +72,7 @@
                 <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Sayfalar</a></li>
                 <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Admin</li>
             </ol>
-            <h6 class="font-weight-bolder mb-0">Carousel Thumbnail</h6>
+            <h6 class="font-weight-bolder mb-0">İletişim</h6>
         </nav>
     </div>
 </nav>

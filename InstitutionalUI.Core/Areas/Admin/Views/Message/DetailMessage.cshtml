@@ -1,0 +1,28 @@
+﻿@model MessageListDto
+@{
+    ViewData["Title"] = "DetailMessage";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Mesaj Detayı</h1>
+<br />
+<span cla ss="text-xs font-weight-bold">
+    <a href="~/Admin/Message/DeleteMessage/@ViewBag.messageId" class="btn btn-outline-warning">Sil</a>
+</span>
+<div class="row">
+    <form>
+        <input type="hidden" class="form-control" asp-for="Id" />
+        <span>Gönderen</span>
+        <input type="text" class="form-control" asp-for="Name" placeholder="Gönderen Giriniz" readonly />
+        <br />
+        <span>Gönderen Email</span>
+        <input type="text" class="form-control" asp-for="Email" placeholder="Kişi Giriniz" readonly />
+        <br />
+        <span>Gönderildiği Tarih</span>
+        <input type="text" class="form-control" asp-for="Date" placeholder="Tarih Giriniz" readonly />
+        <br />
+        <span>Mesaj Detayı</span>
+        <textarea rows="7" cols="7" class="form-control" asp-for="Content" placeholder="Detay Giriniz" readonly></textarea>
+    </form>
+    
+</div>

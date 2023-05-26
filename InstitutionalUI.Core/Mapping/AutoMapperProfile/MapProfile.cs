@@ -5,7 +5,9 @@ using Institutional.Core.Dto.Dtos.Carousel;
 using Institutional.Core.Dto.Dtos.CarouselThumbnail;
 using Institutional.Core.Dto.Dtos.Contact;
 using Institutional.Core.Dto.Dtos.Event;
+using Institutional.Core.Dto.Dtos.Message;
 using Institutional.Core.Dto.Dtos.PageImage;
+using Institutional.Core.Dto.Dtos.Product;
 using Institutional.Core.Dto.Dtos.Testimonial;
 
 namespace InstitutionalUI.Core.Mapping.AutoMapperProfile
@@ -36,6 +38,11 @@ namespace InstitutionalUI.Core.Mapping.AutoMapperProfile
 
             CreateMap<AboutEditDto, About>().ReverseMap();
             CreateMap<AboutListDto, About>().ReverseMap();
+
+            CreateMap<ProductEditDto, Product>().ReverseMap();
+            CreateMap<ProductListDto, Product>().ReverseMap();
+
+            CreateMap<MessageListDto, Message>().ReverseMap();
         }
     }
 }

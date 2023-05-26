@@ -25,8 +25,8 @@ namespace InstitutionalUI.Core.Areas.Admin.Controllers
         public async Task<IActionResult> Index()
         {
             ViewBag.carouselThumbnailCount = await _carouselThumbnailService.CarouselThumbnailCount();
-            var carouselList = _mapper.Map<List<CarouselThumbnailListDto>>(await _carouselThumbnailService.ToListAsync());
-            return View(carouselList);
+            var carouselThumbnailList = _mapper.Map<List<CarouselThumbnailListDto>>(await _carouselThumbnailService.ToListAsync());
+            return View(carouselThumbnailList);
         }
         public async Task<IActionResult> DeleteCarouselThumbnail(int id)
         {
@@ -35,20 +35,20 @@ namespace InstitutionalUI.Core.Areas.Admin.Controllers
         }
         public async Task<IActionResult> EditCarouselThumbnail(int id)
         {
-            var carousel = await _carouselThumbnailService.GetByIdAsync(id);
+            var carouselThumbnail = await _carouselThumbnailService.GetByIdAsync(id);
             return View(new CarouselThumbnailEditDto()
             {
-                Id = carousel.Id,
-                Title = carousel.Title,
-                Content = carousel.Content,
+                Id = carouselThumbnail.Id,
+                Title = carouselThumbnail.Title,
+                Content = carouselThumbnail.Content,
             });
         }
         [HttpPost]
         public async Task<IActionResult> EditCarouselThumbnail(CarouselThumbnailEditDto carouselThumbnailEditDto)
         {
-            var carousel = await _carouselThumbnailService.GetByIdAsync(carouselThumbnailEditDto.Id);
-            carousel.Title = carouselThumbnailEditDto.Title;
-            carousel.Content = carouselThumbnailEditDto.Content;
+            var carouselThumbnail = await _carouselThumbnailService.GetByIdAsync(carouselThumbnailEditDto.Id);
+            carouselThumbnail.Title = carouselThumbnailEditDto.Title;
+            carouselThumbnail.Content = carouselThumbnailEditDto.Content;
             if (carouselThumbnailEditDto.Picture != null && carouselThumbnailEditDto.Picture.Length > 0)
             {
                 var wwwrootFolder = _fileProvider.GetDirectoryContents("wwwroot");
@@ -57,9 +57,9 @@ namespace InstitutionalUI.Core.Areas.Admin.Controllers
                 using var stream = new FileStream(newPicturePath, FileMode.Create);
                 await carouselThumbnailEditDto.Picture.CopyToAsync(stream);
                 carouselThumbnailEditDto.ImageUrl = randomFileName;
-                carousel.Image = carouselThumbnailEditDto.ImageUrl;
+                carouselThumbnail.Image = carouselThumbnailEditDto.ImageUrl;
             }
-            await _carouselThumbnailService.UpdateAsync(carousel);
+            await _carouselThumbnailService.UpdateAsync(carouselThumbnail);
             return Redirect("~/Admin/CarouselThumbnail/Index");
         }
     }

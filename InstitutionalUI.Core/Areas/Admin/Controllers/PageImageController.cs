@@ -25,8 +25,8 @@ namespace InstitutionalUI.Core.Areas.Admin.Controllers
         public async Task<IActionResult> Index()
         {
             ViewBag.pageImageCount = await _pageImageService.PageImageCount();
-            var carouselList = _mapper.Map<List<PageImageListDto>>(await _pageImageService.ToListAsync());
-            return View(carouselList);
+            var pageImageList = _mapper.Map<List<PageImageListDto>>(await _pageImageService.ToListAsync());
+            return View(pageImageList);
         }
         public async Task<IActionResult> DeletePageImage(int id)
         {
@@ -35,11 +35,11 @@ namespace InstitutionalUI.Core.Areas.Admin.Controllers
         }
         public async Task<IActionResult> EditPageImage(int id)
         {
-            var carousel = await _pageImageService.GetByIdAsync(id);
+            var pageImage = await _pageImageService.GetByIdAsync(id);
             return View(new PageImageEditDto()
             {
-                Id = carousel.Id,
-                ShowType = carousel.ShowType,
+                Id = pageImage.Id,
+                ShowType = pageImage.ShowType,
             });
         }
         [HttpPost]

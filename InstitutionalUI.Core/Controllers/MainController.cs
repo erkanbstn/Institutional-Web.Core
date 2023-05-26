@@ -37,6 +37,7 @@ namespace InstitutionalUI.Core.Controllers
 		}
 		public async Task<IActionResult> SendMessage(Message message)
 		{
+			message.Date=DateTime.Now;
 			await _messageService.InsertAsync(message);
 			return RedirectToAction(nameof(MainController.Contact));
 		}

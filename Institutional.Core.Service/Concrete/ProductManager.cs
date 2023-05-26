@@ -32,6 +32,11 @@ namespace Institutional.Core.Service.Concrete
             await _ProductRepository.InsertAsync(t);
         }
 
+        public async Task<int> ProductCount()
+        {
+             return await _ProductRepository.ProductCount();
+        }
+
         public async Task<List<Product>> ToListAsync()
         {
             return await _ProductRepository.ToListAsync();

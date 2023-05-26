@@ -15,5 +15,10 @@ namespace Institutional.Core.Repository.Concrete
         {
             return await _appDbContext.Products.Where(x => x.ShowType == Type).ToListAsync();
         }
+
+        public async Task<int> ProductCount()
+        {
+            return await _appDbContext.Products.CountAsync();
+        }
     }
 }

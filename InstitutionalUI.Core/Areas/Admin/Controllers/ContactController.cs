@@ -22,8 +22,8 @@ namespace InstitutionalUI.Core.Areas.Admin.Controllers
         public async Task<IActionResult> Index()
         {
             ViewBag.contactCount = await _contactService.ContactCount();
-            var carouselList = _mapper.Map<List<ContactListDto>>(await _contactService.ToListAsync());
-            return View(carouselList);
+            var contactList = _mapper.Map<List<ContactListDto>>(await _contactService.ToListAsync());
+            return View(contactList);
         }
 
         public async Task<IActionResult> EditContact(int id)

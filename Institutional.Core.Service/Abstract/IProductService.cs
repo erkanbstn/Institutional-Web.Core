@@ -4,5 +4,7 @@ namespace Institutional.Core.Service.Abstract
     public interface IProductService : IGenericService<Product>
     {
         Task<List<Product>> GetProductListWithType(string Type);
+        Task<int> ProductCount();
+
     }
 }

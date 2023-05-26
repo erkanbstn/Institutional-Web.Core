@@ -26,8 +26,8 @@ namespace InstitutionalUI.Core.Areas.Admin.Controllers
         public async Task<IActionResult> Index()
         {
             ViewBag.testimonialCount = await _testimonialService.TestimonialCount();
-            var carouselList = _mapper.Map<List<TestimonialListDto>>(await _testimonialService.ToListAsync());
-            return View(carouselList);
+            var testimoniallList = _mapper.Map<List<TestimonialListDto>>(await _testimonialService.ToListAsync());
+            return View(testimoniallList);
         }
         public IActionResult NewTestimonial()
         {
