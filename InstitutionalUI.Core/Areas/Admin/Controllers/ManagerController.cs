@@ -19,6 +19,10 @@ namespace InstitutionalUI.Core.Areas.Admin.Controllers
         public async Task<IActionResult> ChangePassword()
         {
             var user = await _managerService.GetByNameAsync(User.Identity.Name);
+            if (user == null)
+            {
+                return RedirectToAction("Error","Main"); 
+            }
             return View(new ManagerEditDto()
             {
                 Id = user.Id,
