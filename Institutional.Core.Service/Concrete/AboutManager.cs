@@ -1,6 +1,8 @@
 ﻿using Institutional.Core.Core.Models;
 using Institutional.Core.Repository.Abstract;
 using Institutional.Core.Service.Abstract;
+using System.Linq.Expressions;
+
 namespace Institutional.Core.Service.Concrete
 {
     public class AboutManager : IAboutService
@@ -40,6 +42,11 @@ namespace Institutional.Core.Service.Concrete
         public async Task<List<About>> ToListAsync()
         {
             return await _aboutRepository.ToListAsync();
+        }
+
+        public Task<List<About>> ToListByFilterAsync()
+        {
+            return _aboutRepository.ToListByFilterAsync(b => b.Status == true);
         }
 
         public async Task UpdateAsync(About t)

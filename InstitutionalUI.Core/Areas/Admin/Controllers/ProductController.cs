@@ -24,7 +24,7 @@ namespace InstitutionalUI.Core.Areas.Admin.Controllers
         public async Task<IActionResult> Index()
         {
             ViewBag.ProductCount = await _ProductService.ProductCount();
-            var ProductList = _mapper.Map<List<ProductListDto>>(await _ProductService.ToListAsync());
+            var ProductList = _mapper.Map<List<ProductListDto>>(await _ProductService.ToListByFilterAsync());
             return View(ProductList);
         }
         public async Task<IActionResult> EditProduct(int id)

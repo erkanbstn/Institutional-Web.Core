@@ -14,7 +14,7 @@ namespace InstitutionalUI.Core.ViewComponents
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            return View(await _testimonialService.ToListAsync());
+            return View(await _testimonialService.ToListByFilterAsync());
         }
     }
 }

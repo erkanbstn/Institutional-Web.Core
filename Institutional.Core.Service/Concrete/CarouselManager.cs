@@ -39,6 +39,11 @@ namespace Institutional.Core.Service.Concrete
             return await _CarouselRepository.ToListAsync();
         }
 
+        public async Task<List<Carousel>> ToListByFilterAsync()
+        {
+            return await _CarouselRepository.ToListByFilterAsync(b => b.Status == true);
+        }
+
         public async Task UpdateAsync(Carousel t)
         {
             await _CarouselRepository.UpdateAsync(t);

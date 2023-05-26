@@ -22,7 +22,7 @@ namespace InstitutionalUI.Core.Areas.Admin.Controllers
         public async Task<IActionResult> Index()
         {
             ViewBag.contactCount = await _contactService.ContactCount();
-            var contactList = _mapper.Map<List<ContactListDto>>(await _contactService.ToListAsync());
+            var contactList = _mapper.Map<List<ContactListDto>>(await _contactService.ToListByFilterAsync());
             return View(contactList);
         }
 

@@ -1,5 +1,6 @@
 ﻿using Institutional.Core.Core.Models;
 using Institutional.Core.Repository.Abstract;
+using Institutional.Core.Repository.Concrete;
 using Institutional.Core.Service.Abstract;
 namespace Institutional.Core.Service.Concrete
 {
@@ -35,6 +36,12 @@ namespace Institutional.Core.Service.Concrete
         public async Task<List<Contact>> ToListAsync()
         {
             return await _ContactRepository.ToListAsync();
+        }
+
+        public async Task<List<Contact>> ToListByFilterAsync()
+        {
+            return await _ContactRepository.ToListByFilterAsync(b => b.Status == true);
+
         }
 
         public async Task UpdateAsync(Contact t)

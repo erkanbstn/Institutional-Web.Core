@@ -24,7 +24,7 @@ namespace InstitutionalUI.Core.Areas.Admin.Controllers
         public async Task<IActionResult> Index()
         {
             ViewBag.carouselCount = await _carouselService.CarouselCount();
-            var carouselList = _mapper.Map<List<CarouselListDto>>(await _carouselService.ToListAsync());
+            var carouselList = _mapper.Map<List<CarouselListDto>>(await _carouselService.ToListByFilterAsync());
             return View(carouselList);
         }
         public IActionResult NewCarousel()

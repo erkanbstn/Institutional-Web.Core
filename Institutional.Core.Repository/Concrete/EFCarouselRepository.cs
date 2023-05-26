@@ -13,7 +13,7 @@ namespace Institutional.Core.Repository.Concrete
 
         public async Task<int> CarouselCount()
         {
-            return await _appDbContext.Carousels.CountAsync();
+            return await _appDbContext.Carousels.Where(x => x.Status == true).CountAsync();
         }
     }
 }

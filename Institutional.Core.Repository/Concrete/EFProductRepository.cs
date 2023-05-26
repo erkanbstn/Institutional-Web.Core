@@ -13,12 +13,12 @@ namespace Institutional.Core.Repository.Concrete
 
         public async Task<List<Product>> GetProductListWithType(string Type)
         {
-            return await _appDbContext.Products.Where(x => x.ShowType == Type).ToListAsync();
+            return await _appDbContext.Products.Where(x => x.ShowType == Type && x.Status == true).ToListAsync();
         }
 
         public async Task<int> ProductCount()
         {
-            return await _appDbContext.Products.CountAsync();
+            return await _appDbContext.Products.Where(x => x.Status == true).CountAsync();
         }
     }
 }

@@ -13,7 +13,7 @@ namespace InstitutionalUI.Core.ViewComponents
         }
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            return View(await _carouselThumbnailService.ToListAsync());
+            return View(await _carouselThumbnailService.ToListByFilterAsync());
         }
     }
 }

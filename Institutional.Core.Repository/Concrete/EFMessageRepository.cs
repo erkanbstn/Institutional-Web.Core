@@ -23,10 +23,5 @@ namespace Institutional.Core.Repository.Concrete
         {
             return await _appDbContext.Messages.Where(x => x.Status == true).CountAsync();
         }
-
-        public async Task<List<Message>> ToListByStatusAsync()
-        {
-            return await _appDbContext.Messages.Where(x => x.Status == true).ToListAsync();
-        }
     }
 }

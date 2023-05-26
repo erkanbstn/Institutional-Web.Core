@@ -1,5 +1,7 @@
 ﻿using Institutional.Core.Repository.Abstract;
 using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
+
 namespace Institutional.Core.Repository.Concrete
 {
     public class EFRepository<T> : IGenericRepository<T> where T : class
@@ -33,6 +35,11 @@ namespace Institutional.Core.Repository.Concrete
         public async Task<List<T>> ToListAsync()
         {
             return await _object.ToListAsync();
+        }
+
+        public async Task<List<T>> ToListByFilterAsync(Expression<Func<T, bool>> filter)
+        {
+            return await _object.Where(filter).ToListAsync();
         }
 
         public async Task UpdateAsync(T t)

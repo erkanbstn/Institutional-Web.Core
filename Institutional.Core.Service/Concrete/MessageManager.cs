@@ -45,9 +45,9 @@ namespace Institutional.Core.Service.Concrete
             return await _MessageRepository.ToListAsync();
         }
 
-        public async Task<List<Message>> ToListByStatusAsync()
+        public async Task<List<Message>> ToListByFilterAsync()
         {
-            return await _MessageRepository.ToListByStatusAsync();
+            return await _MessageRepository.ToListByFilterAsync(b => b.Status == true);
         }
 
         public async Task UpdateAsync(Message t)

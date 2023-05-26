@@ -1,5 +1,6 @@
 ﻿using Institutional.Core.Core.Models;
 using Institutional.Core.Repository.Abstract;
+using Institutional.Core.Repository.Concrete;
 using Institutional.Core.Service.Abstract;
 namespace Institutional.Core.Service.Concrete
 {
@@ -37,6 +38,11 @@ namespace Institutional.Core.Service.Concrete
         public async Task<List<CarouselThumbnail>> ToListAsync()
         {
             return await _CarouselThumbnailRepository.ToListAsync();
+        }
+
+        public async Task<List<CarouselThumbnail>> ToListByFilterAsync()
+        {
+            return await _CarouselThumbnailRepository.ToListByFilterAsync(b => b.Status == true);
         }
 
         public async Task UpdateAsync(CarouselThumbnail t)

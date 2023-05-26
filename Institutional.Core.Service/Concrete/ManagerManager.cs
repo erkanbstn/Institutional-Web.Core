@@ -56,6 +56,11 @@ namespace Institutional.Core.Service.Concrete
             return await _ManagerRepository.ToListAsync();
         }
 
+        public async Task<List<Manager>> ToListByFilterAsync()
+        {
+            return await _ManagerRepository.ToListByFilterAsync(b => b.Status == true);
+        }
+
         public async Task UpdateAsync(Manager t)
         {
             await _ManagerRepository.UpdateAsync(t);

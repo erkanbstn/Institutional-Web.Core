@@ -13,7 +13,7 @@ namespace Institutional.Core.Repository.Concrete
 
         public async Task<int> EventCount()
         {
-            return await _appDbContext.Events.CountAsync();
+            return await _appDbContext.Events.Where(x => x.Status == true).CountAsync();
         }
     }
 }

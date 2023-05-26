@@ -22,7 +22,7 @@ namespace InstitutionalUI.Core.Areas.Admin.Controllers
         public async Task<IActionResult> Index()
         {
             ViewBag.MessageCount = await _MessageService.MessageCount();
-            var messageList = _mapper.Map<List<MessageListDto>>(await _MessageService.ToListByStatusAsync());
+            var messageList = _mapper.Map<List<MessageListDto>>(await _MessageService.ToListByFilterAsync());
             return View(messageList);
         }
         public async Task<IActionResult> DetailMessage(int id)

@@ -19,7 +19,7 @@ namespace Institutional.Core.Service.Concrete
 
         public async Task<int> EventCount()
         {
-             return await _EventRepository.EventCount();
+            return await _EventRepository.EventCount();
         }
 
         public async Task<Event> GetByIdAsync(int id)
@@ -35,6 +35,11 @@ namespace Institutional.Core.Service.Concrete
         public async Task<List<Event>> ToListAsync()
         {
             return await _EventRepository.ToListAsync();
+        }
+
+        public async Task<List<Event>> ToListByFilterAsync()
+        {
+            return await _EventRepository.ToListByFilterAsync(b => b.Status == true);
         }
 
         public async Task UpdateAsync(Event t)

@@ -13,7 +13,7 @@ namespace Institutional.Core.Repository.Concrete
 
         public async Task<int> TestimonialCount()
         {
-            return await _appDbContext.Testimonials.CountAsync();
+            return await _appDbContext.Testimonials.Where(x => x.Status == true).CountAsync();
         }
     }
 }

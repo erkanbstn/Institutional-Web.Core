@@ -14,7 +14,7 @@ namespace Institutional.Core.Repository.Concrete
 
         public async Task<int> ContactCount()
         {
-            return await _appDbContext.Contacts.CountAsync();
+            return await _appDbContext.Contacts.Where(x => x.Status == true).CountAsync();
         }
     }
 }

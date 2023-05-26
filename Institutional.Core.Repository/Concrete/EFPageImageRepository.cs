@@ -13,12 +13,12 @@ namespace Institutional.Core.Repository.Concrete
 
         public async Task<List<PageImage>> GetPageImageListWithType(string Type)
         {
-            return await _appDbContext.PageImages.Where(x => x.ShowType == Type).ToListAsync();
+            return await _appDbContext.PageImages.Where(x => x.ShowType == Type && x.Status == true).ToListAsync();
         }
 
         public async Task<int> PageImageCount()
         {
-            return await _appDbContext.PageImages.CountAsync();
+            return await _appDbContext.PageImages.Where(x => x.Status == true).CountAsync();
         }
     }
 }

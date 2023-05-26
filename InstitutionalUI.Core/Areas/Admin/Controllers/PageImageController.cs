@@ -25,7 +25,7 @@ namespace InstitutionalUI.Core.Areas.Admin.Controllers
         public async Task<IActionResult> Index()
         {
             ViewBag.pageImageCount = await _pageImageService.PageImageCount();
-            var pageImageList = _mapper.Map<List<PageImageListDto>>(await _pageImageService.ToListAsync());
+            var pageImageList = _mapper.Map<List<PageImageListDto>>(await _pageImageService.ToListByFilterAsync());
             return View(pageImageList);
         }
         public async Task<IActionResult> DeletePageImage(int id)

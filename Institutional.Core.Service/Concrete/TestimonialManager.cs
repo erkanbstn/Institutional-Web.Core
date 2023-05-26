@@ -39,6 +39,11 @@ namespace Institutional.Core.Service.Concrete
             return await _TestimonialRepository.ToListAsync();
         }
 
+        public async Task<List<Testimonial>> ToListByFilterAsync()
+        {
+            return await _TestimonialRepository.ToListByFilterAsync(b => b.Status == true);
+        }
+
         public async Task UpdateAsync(Testimonial t)
         {
             await _TestimonialRepository.UpdateAsync(t);

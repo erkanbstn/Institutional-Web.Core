@@ -44,6 +44,12 @@ namespace Institutional.Core.Service.Concrete
             return await _PageImageRepository.ToListAsync();
         }
 
+        public async Task<List<PageImage>> ToListByFilterAsync()
+        {
+            return await _PageImageRepository.ToListByFilterAsync(b => b.Status == true);
+
+        }
+
         public async Task UpdateAsync(PageImage t)
         {
             await _PageImageRepository.UpdateAsync(t);

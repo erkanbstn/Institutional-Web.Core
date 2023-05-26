@@ -25,7 +25,7 @@ namespace InstitutionalUI.Core.Areas.Admin.Controllers
         public async Task<IActionResult> Index()
         {
             ViewBag.AboutCount = await _AboutService.AboutCount();
-            var AboutList = _mapper.Map<List<AboutListDto>>(await _AboutService.ToListAsync());
+            var AboutList = _mapper.Map<List<AboutListDto>>(await _AboutService.ToListByFilterAsync());
             return View(AboutList);
         }
         public async Task<IActionResult> EditAbout(int id)

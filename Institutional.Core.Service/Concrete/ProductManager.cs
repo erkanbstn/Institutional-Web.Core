@@ -42,6 +42,12 @@ namespace Institutional.Core.Service.Concrete
             return await _ProductRepository.ToListAsync();
         }
 
+        public async Task<List<Product>> ToListByFilterAsync()
+        {
+            return await _ProductRepository.ToListByFilterAsync(b => b.Status == true);
+
+        }
+
         public async Task UpdateAsync(Product t)
         {
             await _ProductRepository.UpdateAsync(t);

@@ -1,4 +1,6 @@
-﻿namespace Institutional.Core.Service.Abstract
+﻿using System.Linq.Expressions;
+
+namespace Institutional.Core.Service.Abstract
 {
     public interface IGenericService<T> where T : class
     {
@@ -7,5 +9,6 @@
         Task UpdateAsync(T t);
         Task<T> GetByIdAsync(int id);
         Task<List<T>> ToListAsync();
+        Task<List<T>> ToListByFilterAsync();
     }
 }
