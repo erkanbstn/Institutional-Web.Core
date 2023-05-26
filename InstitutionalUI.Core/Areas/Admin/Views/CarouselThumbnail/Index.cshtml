@@ -1,8 +1,9 @@
-﻿@model List<CarouselListDto>
+﻿@model List<CarouselThumbnailListDto>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+
 <div class="row">
     <div class="col-lg-12 col-md-8 mb-md-0 mt-6 ">
         <div class="card">
@@ -47,10 +48,10 @@
                                     </td>
                                     <td class="align-middle text-center text-sm">
                                         <span class="text-xs font-weight-bold">
-                                            <a href="~/Admin/Carousel/DeleteCarousel/@Carousel.Id" class="btn btn-outline-warning">Sil</a>
+                                                <a href="~/Admin/CarouselThumbnail/DeleteCarouselThumbnail/@Carousel.Id" class="btn btn-outline-warning">Sil</a>
                                         </span>
                                         <span cla ss="text-xs font-weight-bold">
-                                            <a href="~/Admin/Carousel/EditCarousel/@Carousel.Id" class="btn btn-outline-info">Düzenle</a>
+                                                <a href="~/Admin/CarouselThumbnail/EditCarouselThumbnail/@Carousel.Id" class="btn btn-outline-info">Düzenle</a>
                                         </span>
                                     </td>
                                     <td class="align-middle text-center text-sm">
@@ -70,7 +71,6 @@
                         </tbody>
                     </table>
                     <br />
-                    <a href="~/Admin/Carousel/NewCarousel" class="btn btn-outline-primary ms-3">Yeni Carousel Ekle</a>
                 </div>
             </div>
         </div>
@@ -83,7 +83,7 @@
                 <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Sayfalar</a></li>
                 <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Admin</li>
             </ol>
-            <h6 class="font-weight-bolder mb-0">Carousel</h6>
+            <h6 class="font-weight-bolder mb-0">Carousel Thumbnail</h6>
         </nav>
     </div>
 </nav>

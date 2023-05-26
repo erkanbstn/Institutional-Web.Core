@@ -9,5 +9,6 @@ namespace Institutional.Core.Service.Abstract
 {
     public interface ICarouselThumbnailService : IGenericService<CarouselThumbnail>
     {
+        Task<int> CarouselThumbnailCount();
     }
 }

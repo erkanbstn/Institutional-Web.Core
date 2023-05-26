@@ -18,8 +18,15 @@ namespace Institutional.Core.Service.Concrete
             _CarouselThumbnailRepository = CarouselThumbnailRepository;
         }
 
+        public async Task<int> CarouselThumbnailCount()
+        {
+            return await _CarouselThumbnailRepository.CarouselThumbnailCount();
+        }
+
         public async Task DeleteAsync(CarouselThumbnail t)
         {
+            t.DeletedDate = DateTime.Now;
+            t.Status = false;
             await _CarouselThumbnailRepository.DeleteAsync(t);
         }
 
