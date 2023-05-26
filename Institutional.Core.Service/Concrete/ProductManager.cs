@@ -23,9 +23,9 @@ namespace Institutional.Core.Service.Concrete
             await _ProductRepository.DeleteAsync(t);
         }
 
-        public async Task<Product> GetByIdAsync(Product t)
+        public async Task<Product> GetByIdAsync(int id)
         {
-            return await _ProductRepository.GetByIdAsync(t);
+            return await _ProductRepository.GetByIdAsync(id);
         }
 
         public async Task<List<Product>> GetProductListWithType(string Type)

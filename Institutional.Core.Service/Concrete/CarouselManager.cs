@@ -18,14 +18,21 @@ namespace Institutional.Core.Service.Concrete
             _CarouselRepository = CarouselRepository;
         }
 
+        public async Task<int> CarouselCount()
+        {
+            return await _CarouselRepository.CarouselCount();
+        }
+
         public async Task DeleteAsync(Carousel t)
         {
+            t.DeletedDate = DateTime.Now;
+            t.Status = false;
             await _CarouselRepository.DeleteAsync(t);
         }
 
-        public async Task<Carousel> GetByIdAsync(Carousel t)
+        public async Task<Carousel> GetByIdAsync(int id)
         {
-            return await _CarouselRepository.GetByIdAsync(t);
+            return await _CarouselRepository.GetByIdAsync(id);
         }
 
         public async Task InsertAsync(Carousel t)

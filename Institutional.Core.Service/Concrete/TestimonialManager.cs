@@ -23,9 +23,9 @@ namespace Institutional.Core.Service.Concrete
             await _TestimonialRepository.DeleteAsync(t);
         }
 
-        public async Task<Testimonial> GetByIdAsync(Testimonial t)
+        public async Task<Testimonial> GetByIdAsync(int id)
         {
-            return await _TestimonialRepository.GetByIdAsync(t);
+            return await _TestimonialRepository.GetByIdAsync(id);
         }
 
         public async Task InsertAsync(Testimonial t)

@@ -20,13 +20,14 @@ namespace Institutional.Core.Repository.Concrete
 
         public async Task DeleteAsync(T t)
         {
-            _object.Remove(t);
+            //_object.Remove(t);
+            _object.Update(t);
             await _appDbContext.SaveChangesAsync();
         }
 
-        public async Task<T> GetByIdAsync(T t)
+        public async Task<T> GetByIdAsync(int id)
         {
-            return await _object.FindAsync(t);
+            return await _object.FindAsync(id);
         }
 
         public async Task InsertAsync(T t)

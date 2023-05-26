@@ -1,4 +1,4 @@
-﻿@model List<Carousel>
+﻿@model List<CarouselListDto>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -12,7 +12,7 @@
                         <h6>Carousel</h6>
                         <p class="text-sm mb-0">
                             <i class="fa fa-check text-info" aria-hidden="true"></i>
-                            <span class="font-weight-bold ms-1">30 done</span> this month
+                            <span class="font-weight-bold ms-1">@ViewBag.carouselCount</span> Adet Veri Mevcut
                         </p>
                     </div>
                     @* <div class="col-lg-6 col-5 my-auto text-end">
@@ -37,6 +37,7 @@
                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Görsel-Başlık</th>
                                 <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">İçerik</th>
                                 <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Aksiyon</th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Durum</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -58,10 +59,22 @@
                                     </td>
                                     <td class="align-middle text-center text-sm">
                                         <span class="text-xs font-weight-bold">
-                                            <a href="#" class="btn btn-outline-warning">Sil</a>
+                                            <a href="~/Admin/Carousel/DeleteCarousel/@Carousel.Id" class="btn btn-outline-warning">Sil</a>
                                         </span>
+                                        <span cla ss="text-xs font-weight-bold">
+                                            <a href="~/Admin/Carousel/EditCarousel/@Carousel.Id" class="btn btn-outline-info">Düzenle</a>
+                                        </span>
+                                    </td>
+                                    <td class="align-middle text-center text-sm">
                                         <span class="text-xs font-weight-bold">
-                                            <a href="#" class="btn btn-outline-info">Düzenle</a>
+                                            @if (Carousel.Status)
+                                            {
+                                                <span class="text-success">Aktif</span>
+                                            }
+                                            else
+                                            {
+                                               <span class="text-danger">Pasif</span>
+                                            }
                                         </span>
                                     </td>
                                 </tr>
@@ -69,7 +82,7 @@
                         </tbody>
                     </table>
                     <br />
-                    <a href="#" class="btn btn-outline-primary ms-3">Yeni Carousel Ekle</a>
+                    <a href="~/Admin/Carousel/NewCarousel" class="btn btn-outline-primary ms-3">Yeni Carousel Ekle</a>
                 </div>
             </div>
         </div>

@@ -28,9 +28,9 @@ namespace Institutional.Core.Service.Concrete
             return await _aboutRepository.GetAboutListWithType(Type);
         }
 
-        public async Task<About> GetByIdAsync(About t)
+        public async Task<About> GetByIdAsync(int id)
         {
-            return await _aboutRepository.GetByIdAsync(t);
+            return await _aboutRepository.GetByIdAsync(id);
         }
 
         public async Task InsertAsync(About t)

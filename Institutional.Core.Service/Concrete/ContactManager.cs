@@ -23,9 +23,9 @@ namespace Institutional.Core.Service.Concrete
             await _ContactRepository.DeleteAsync(t);
         }
 
-        public async Task<Contact> GetByIdAsync(Contact t)
+        public async Task<Contact> GetByIdAsync(int id)
         {
-            return await _ContactRepository.GetByIdAsync(t);
+            return await _ContactRepository.GetByIdAsync(id);
         }
 
         public async Task InsertAsync(Contact t)

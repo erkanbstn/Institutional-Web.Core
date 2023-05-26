@@ -23,9 +23,9 @@ namespace Institutional.Core.Service.Concrete
             await _PageImageRepository.DeleteAsync(t);
         }
 
-        public async Task<PageImage> GetByIdAsync(PageImage t)
+        public async Task<PageImage> GetByIdAsync(int id)
         {
-            return await _PageImageRepository.GetByIdAsync(t);
+            return await _PageImageRepository.GetByIdAsync(id);
         }
 
         public async Task<List<PageImage>> GetPageImageListWithType(string Type)

@@ -11,7 +11,7 @@ namespace Institutional.Core.Repository.Abstract
         Task InsertAsync(T t);
         Task DeleteAsync(T t);
         Task UpdateAsync(T t);
-        Task<T> GetByIdAsync(T t);
+        Task<T> GetByIdAsync(int id);
         Task<List<T>> ToListAsync();
     }
 }

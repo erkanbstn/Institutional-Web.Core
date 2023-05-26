@@ -23,9 +23,9 @@ namespace Institutional.Core.Service.Concrete
             await _EventRepository.DeleteAsync(t);
         }
 
-        public async Task<Event> GetByIdAsync(Event t)
+        public async Task<Event> GetByIdAsync(int id)
         {
-            return await _EventRepository.GetByIdAsync(t);
+            return await _EventRepository.GetByIdAsync(id);
         }
 
         public async Task InsertAsync(Event t)

@@ -23,9 +23,9 @@ namespace Institutional.Core.Service.Concrete
 			await _MessageRepository.DeleteAsync(t);
 		}
 
-		public async Task<Message> GetByIdAsync(Message t)
+		public async Task<Message> GetByIdAsync(int id)
 		{
-			return await _MessageRepository.GetByIdAsync(t);
+			return await _MessageRepository.GetByIdAsync(id);
 		}
 
 		public async Task InsertAsync(Message t)

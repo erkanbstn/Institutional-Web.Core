@@ -24,9 +24,9 @@ namespace Institutional.Core.Service.Concrete
             await _ManagerRepository.DeleteAsync(t);
         }
 
-        public async Task<Manager> GetByIdAsync(Manager t)
+        public async Task<Manager> GetByIdAsync(int id)
         {
-            return await _ManagerRepository.GetByIdAsync(t);
+            return await _ManagerRepository.GetByIdAsync(id);
         }
 
         public async Task InsertAsync(Manager t)

@@ -23,9 +23,9 @@ namespace Institutional.Core.Service.Concrete
             await _CarouselThumbnailRepository.DeleteAsync(t);
         }
 
-        public async Task<CarouselThumbnail> GetByIdAsync(CarouselThumbnail t)
+        public async Task<CarouselThumbnail> GetByIdAsync(int id)
         {
-            return await _CarouselThumbnailRepository.GetByIdAsync(t);
+            return await _CarouselThumbnailRepository.GetByIdAsync(id);
         }
 
         public async Task InsertAsync(CarouselThumbnail t)
