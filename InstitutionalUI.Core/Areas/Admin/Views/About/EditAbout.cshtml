@@ -1,8 +1,45 @@
-﻿
+﻿@model AboutEditDto
 @{
     ViewData["Title"] = "EditAbout";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h1>EditAbout</h1>
-
+<h1>Hakkımızda Düzenle</h1>
+<br />
+<div class="row">
+    <form method="post" enctype="multipart/form-data">
+        <input type="hidden" class="form-control" asp-for="Id" />
+        <span>Başlık</span>
+        <input type="text" class="form-control" asp-for="Title" placeholder="Başlık Giriniz" />
+        <br />
+        <span>Yıllık Deneyim</span>
+        <input type="text" class="form-control" asp-for="ExperienceYear" placeholder="Yıllık Deneyim" />
+        <br />
+        <span>Çorap Çeşidi</span>
+        <input type="text" class="form-control" asp-for="SockVariety" placeholder="Çorap Çeşidi" />
+        <br />
+        <span>Çalışan Sayısı</span>
+        <input type="text" class="form-control" asp-for="Employee" placeholder="Çalışan Sayısı Giriniz" />
+        <br />
+        <span>Memnun Müşteri Sayısı</span>
+        <input type="text" class="form-control" asp-for="HappyCustomer" placeholder="Memnun Müşteri Sayısı Giriniz" />
+        <br />
+        <span>İçerik</span>
+        <textarea cols="3" rows="3" class="form-control" asp-for="Content" placeholder="İçerik Giriniz"></textarea>
+        <br />
+        <span>Görüntüleme Tipi <b>(Hangi Sayfada Görüntüleneceğini Seçiniz)</b></span>
+        <select asp-for="ShowType" class="form-control">
+            <option value="">Görüntüleme Tipi Seçiniz</option>
+            <option value="Kurumsal">Kurumsal</option>
+            <option value="Hakkımızda">Hakkımızda</option>
+        </select>
+        <br />
+        <span>Küçük Görsel</span>
+        <input type="file" class="form-control" asp-for="SmallPicture" placeholder="Dosya Seçiniz" />
+        <br />
+        <span>Büyük Görsel</span>
+        <input type="file" class="form-control" asp-for="BigPicture" placeholder="Dosya Seçiniz" />
+        <br />
+        <input type="submit" class="btn btn-info" value="Değişiklikleri Kaydet" />
+    </form>
+</div>

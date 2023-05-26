@@ -2,11 +2,14 @@
 using Institutional.Core.Core.Models;
 using Institutional.Core.Dto.Dtos.About;
 using Institutional.Core.Service.Abstract;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.FileProviders;
 
 namespace InstitutionalUI.Core.Areas.Admin.Controllers
 {
+    [Area("Admin")]
+    [Authorize]
     public class AboutController : Controller
     {
         private readonly IMapper _mapper;

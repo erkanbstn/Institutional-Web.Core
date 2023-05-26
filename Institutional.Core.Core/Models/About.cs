@@ -4,8 +4,8 @@
     {
         public string Title { get; set; }
         public string Content { get; set; }
-        public string BigImage { get; set; }
-        public string SmallImage { get; set; }
+        public string? BigImage { get; set; }
+        public string? SmallImage { get; set; }
         public string ExperienceYear { get; set; }
         public string SockVariety { get; set; }
         public string Employee { get; set; }

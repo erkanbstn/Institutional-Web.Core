@@ -34,7 +34,6 @@ namespace InstitutionalUI.Core.Mapping.AutoMapperProfile
             CreateMap<ContactListDto, Contact>().ReverseMap();
             CreateMap<ContactEditDto, Contact>().ReverseMap();
 
-            CreateMap<AboutAddDto , About>().ReverseMap();
             CreateMap<AboutEditDto, About>().ReverseMap();
             CreateMap<AboutListDto, About>().ReverseMap();
         }
